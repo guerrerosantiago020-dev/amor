@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Para mi amor ❤️</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Fondo floral SVG -->
+  <div class="floral-bg" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <linearGradient id="g1" x1="0" x2="1">
+          <stop offset="0" stop-color="#fff7e6"/>
+          <stop offset="1" stop-color="#fff2cc"/>
+        </linearGradient>
+      </defs>
+      <rect width="1200" height="600" fill="url(#g1)"/>
+      <!-- Flores simples réplica en patrón -->
+      <g fill="#ffd54a" opacity="0.95">
+        <path d="M120 80c18-22 46-30 72-20 6 2 11 5 16 9 8-10 21-16 34-14 20 3 34 21 33 40-1 17-11 28-22 39 6 6 10 14 11 22 3 26-21 48-47 43-10-2-17-7-24-13-8 7-19 11-30 11-27 0-48-24-45-51 2-19 16-33 27-47-11-7-21-18-22-33-1-16 9-30 25-36z"/>
+        <circle cx="120" cy="80" r="6" fill="#ffb300"/>
+      </g>
+
+      <g transform="translate(920,120)" fill="#ffd54a" opacity="0.85">
+        <path d="M60 20c14-18 36-24 56-16 5 2 10 5 14 8 7-8 18-12 29-10 17 3 29 18 28 34-1 14-9 24-19 33 5 5 9 11 10 18 3 21-17 38-39 34-8-2-14-6-20-11-7 6-16 9-26 9-23 0-40-19-37-41 2-16 14-27 24-38-9-6-18-15-19-28-1-13 7-24 20-29z"/>
+        <circle cx="60" cy="20" r="5" fill="#ffb300"/>
+      </g>
+
+      <!-- Más pétalos dispersos -->
+      <g fill="#ffecb3" opacity="0.6">
+        <ellipse cx="400" cy="480" rx="80" ry="30" transform="rotate(-22 400 480)"/>
+        <ellipse cx="700" cy="30" rx="120" ry="40" transform="rotate(12 700 30)"/>
+      </g>
+    </svg>
+  </div>
+
+  <header class="hero" role="banner">
+    <div class="hero-inner">
+      <h1 id="title">Para mi amor</h1>
+      <p id="subtitle">No quiero estar con otra persona que no seas tú.</p>
+
+      <div class="author-row">
+        <span class="from">Con todo mi cariño,</span>
+        <strong id="author">Santiago</strong>
+      </div>
+
+      <div class="controls">
+        <button id="openLetter" class="btn primary">Leer mi carta</button>
+        <button id="playBtn" class="btn outline">Reproducir canción</button>
+      </div>
+    </div>
+
+    <!-- pequeño corazón animado -->
+    <div class="floating-heart" aria-hidden="true">
+      <svg viewBox="0 0 32 29.6"><path d="M23.6 0c-2.9 0-5.2 1.6-6.6 3.9C15.6 1.6 13.3 0 10.4 0 4.9 0 .8 4.9 .8 10.6c0 7.8 12.9 13.8 15.2 15 2.3-1.2 15.2-7.2 15.2-15C31.2 4.9 27.1 0 21.6 0z"/></svg>
+    </div>
+  </header>
+
+  <main class="container" role="main">
+    <section class="card letter-preview" aria-labelledby="previewTitle">
+      <h2 id="previewTitle">Una promesa</h2>
+      <p class="lead" id="leadText">Prometo cuidarte, respetarte y amarte cada día. No quiero estar con otra persona que no seas tú.</p>
+      <button id="surpriseBtn" class="btn secondary">¡Sorpresa!</button>
+    </section>
+
+    <section class="card gallery" aria-labelledby="galleryTitle">
+      <h2 id="galleryTitle">Momentos</h2>
+      <div class="grid" id="gallery">
+        <img src="images/photo1.jpg" alt="Nuestro primer día" class="thumb" />
+        <img src="images/photo2.jpg" alt="Riendo juntos" class="thumb" />
+        <img src="images/photo3.jpg" alt="Un paseo inolvidable" class="thumb" />
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal: carta -->
+  <div id="letterModal" class="modal" aria-hidden="true" role="dialog" aria-label="Carta de amor">
+    <div class="modal-panel">
+      <button id="closeLetter" class="modal-close" aria-label="Cerrar carta">✕</button>
+      <h3>Carta para ti</h3>
+      <div class="letter-content" id="letterContent" tabindex="0">
+        <!-- Texto llenado por script.js -->
+      </div>
+      <div class="modal-actions">
+        <button id="letterConfetti" class="btn primary">Me encanta ❤</button>
+        <button id="downloadBtn" class="btn outline">Descargar carta (texto)</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal galería (simple) -->
+  <div id="imgModal" class="modal img-modal" aria-hidden="true">
+    <div class="modal-panel">
+      <button id="closeImgModal" class="modal-close">✕</button>
+      <img id="imgEnlarged" src="" alt="" />
+    </div>
+  </div>
+
+  <!-- Audio: reemplaza con tu canción en audio/musica.mp3 -->
+  <audio id="bgAudio" loop preload="none">
+    <source src="audio/musica.mp3" type="audio/mpeg" />
+    Tu navegador no soporta audio.
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
